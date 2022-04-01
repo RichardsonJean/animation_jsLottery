@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lottery</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           margin: 10% 30%;
+           height: 80vh;
+           background-color: #fff;
+           position: relative;
+        }
+        p{
+            position: absolute;
+            bottom: 30%;
+        }
+        h1{
+            
+            margin-top: -80%;
+        }
+        #myp{
+            position: absolute;
+            margin-bottom: 40%;
+        }
+
+
+        #yournum{
+            position: absolute;
+            top: 30%;
+        }
+
+        button{
+            position: absolute;
+            width: 20%;
+            height: 20%;
+          
+           
+
+        }
+        button:hover{
+            background-color: aquamarine;
+        }
+       
+    </style>
+</head>
+<body>
+   
+   <div>
+    <h1>The JavaScript Lottery</h1>
+    <p id="myp">Click the button to draw a number.</p>
+      
+       <button onclick="Lottery()">Let's Play</button>
+   
+   <p>your number: <span id="mynum"></span></p></div>  
+   <script>
+
+
+function Lottery() {
+   
+  var  number = parseInt(Math.floor(Math.random()*1000)+ 1);
+   document.getElementById("mynum").innerHTML=number;
+   setInterval(Lottery, 400);
+  
+          
+}
+
+
+setTimeout(function(){
+    location.reload();
+    var num=67;
+   var number=Lottery();
+   if(number ==num){
+  
+       alert("You win!");
+   }else{
+       
+       alert("Too bad! You've lost!");
+   }
+}, 9000);
+
+   </script>
+</body>
+</html>
